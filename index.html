@@ -116,16 +116,9 @@ header{
   min-height:100svh;display:flex;flex-direction:column;justify-content:center;
   padding:110px 32px 90px;position:relative;overflow:hidden;
 }
-/* фоновая сцена UnicornStudio: живёт только внутри hero, кликов не ловит */
-#usBg{
-  position:absolute;inset:0;z-index:0;pointer-events:none;
-  opacity:0;transition:opacity 1.2s var(--ease);
-  /* пока сцена грузится (или если CDN недоступен) — мягкая подложка в цвет бумаги */
-  background:radial-gradient(120% 90% at 60% 30%,#efece6 0%,var(--bg) 70%);
+#inkCanvas{
+  position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.5;
 }
-#usBg.on{opacity:.85}
-#usBg canvas{width:100%!important;height:100%!important;display:block}
-@media(prefers-reduced-motion:reduce){#usBg{transition:none}}
 .hero-kec{
   font-weight:900;font-size:clamp(96px,24vw,380px);line-height:.82;letter-spacing:-.06em;
   position:relative;z-index:2;user-select:none;
@@ -482,7 +475,7 @@ footer{
 </nav>
 
 <header>
-  <div id="usBg" data-us-project="ge3Ju59EBFwvL3UJKKys" data-us-scale="1" data-us-dpi="1.5" data-us-disablemobile="true" aria-hidden="true"></div>
+  <canvas id="inkCanvas"></canvas>
   <h1 class="hero-kec" id="heroTitle" aria-label="KEC"><span class="l">K</span><span class="l">E</span><span class="l">C</span></h1>
   <div class="hero-photo rv">
     <div class="tape t1"></div>
@@ -764,47 +757,91 @@ footer{
   document.querySelectorAll('.work').forEach(function(w){io.observe(w)});
 })();
 
-// ---- hero: фоновая сцена UnicornStudio ----
+// ---- hero: пиксельные полосы под курсором ----
 (function(){
-  var host=document.getElementById('usBg');
-  if(!host)return;
-
-  function reveal(){host.classList.add('on')}
-
-  function init(){
-    if(!window.UnicornStudio||!window.UnicornStudio.init)return;
-    // init() возвращает промис со списком сцен — по нему и проявляем фон
-    var r=window.UnicornStudio.init();
-    if(r&&r.then)r.then(reveal,function(){/* сцена не поднялась — остаётся подложка */});
-    else setTimeout(reveal,600);
+  var cv=document.getElementById('inkCanvas');
+  if(!cv)return;
+  var reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ctx=cv.getContext('2d',{alpha:true}),hdr=cv.parentElement;
+  var CELL=26,cols=0,rows=0,cells=null,lastX=null,lastY=null,pointerActive=false;
+  // офскрин-паттерн: фирменная диагональная полоса
+  var pat=(function(){
+    var o=document.createElement('canvas');o.width=o.height=12;
+    var c=o.getContext('2d');
+    c.strokeStyle='#121215';c.lineWidth=2.6;
+    c.beginPath();
+    for(var i=-12;i<=24;i+=6){c.moveTo(i,12);c.lineTo(i+12,0)}
+    c.stroke();
+    return ctx.createPattern(o,'repeat');
+  })();
+  function resize(){
+    var dpr=Math.min(window.devicePixelRatio||1,2);
+    var w=hdr.clientWidth,h=hdr.clientHeight;
+    cv.style.width=w+'px';cv.style.height=h+'px';
+    cv.width=Math.max(1,Math.floor(w*dpr));cv.height=Math.max(1,Math.floor(h*dpr));
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    cols=Math.ceil(w/CELL);rows=Math.ceil(h/CELL);
+    cells=new Float32Array(cols*rows);
+    inject(w*.4,h*.38,.5,4);
+    inject(w*.6,h*.44,.34,3);
   }
-
-  // сцену показываем только там, где она уместна: десктоп + нет reduced-motion
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!matchMedia('(hover:hover)').matches){
-    reveal();
-    return;
+  resize();addEventListener('resize',resize);
+  function setPointer(clientX,clientY){
+    var r=hdr.getBoundingClientRect();
+    if(clientY<r.top||clientY>r.bottom)return;
+    var x=clientX-r.left,y=clientY-r.top;
+    if(lastX===null){lastX=x;lastY=y;inject(x,y,reduceMotion?.4:.85,5);return;}
+    var dist=Math.hypot(x-lastX,y-lastY);
+    var steps=Math.min(18,Math.max(1,Math.ceil(dist/(CELL*.65))));
+    for(var s=0;s<=steps;s++)inject(lastX+(x-lastX)*s/steps,lastY+(y-lastY)*s/steps,reduceMotion?.3:.75,5);
+    lastX=x;lastY=y;pointerActive=true;
   }
-
-  if(window.UnicornStudio&&window.UnicornStudio.init){init();return}
-  window.UnicornStudio={isInitialized:false};
-  var s=document.createElement('script');
-  s.src='https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.2.8/dist/unicornStudio.umd.js';
-  s.async=true;
-  s.onload=init;
-  s.onerror=reveal;   // CDN недоступен — просто оставляем статичную подложку
-  (document.head||document.body).appendChild(s);
-
-  // hero ушёл из вида — глушим отрисовку, чтобы не жечь GPU при скролле
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){
-      es.forEach(function(e){
-        var u=window.UnicornStudio;
-        if(!u)return;
-        if(e.isIntersecting){u.resume&&u.resume()}
-        else{u.pause&&u.pause()}
-      });
-    },{threshold:0}).observe(host);
+  addEventListener('pointermove',function(e){setPointer(e.clientX,e.clientY)},{passive:true});
+  addEventListener('touchmove',function(e){
+    if(e.touches&&e.touches[0])setPointer(e.touches[0].clientX,e.touches[0].clientY);
+  },{passive:true});
+  hdr.addEventListener('pointerleave',function(){lastX=null;lastY=null;pointerActive=false});
+  function inject(x,y,power,rad){
+    var cx=Math.floor(x/CELL),cy=Math.floor(y/CELL),R=rad||5;
+    for(var i=-R;i<=R;i++)for(var j=-R;j<=R;j++){
+      var d=Math.sqrt(i*i+j*j);
+      if(d>R)continue;
+      var c=cx+i,r2=cy+j;
+      if(c<0||r2<0||c>=cols||r2>=rows)continue;
+      if(Math.random()<Math.pow(d/R,1.15)*.76)continue;
+      cells[r2*cols+c]=Math.min(1,cells[r2*cols+c]+power*(1-d/R)+Math.random()*.4);
+    }
   }
+  function autoplay(){
+    if(pointerActive)return;
+    var t=Date.now()*.001;
+    var w=hdr.clientWidth,h=hdr.clientHeight;
+    inject(w*(.5+.28*Math.sin(t*.7)),h*(.36+.18*Math.cos(t*.9)),reduceMotion?.06:.2,4);
+  }
+  function tick(){
+    autoplay();
+    ctx.clearRect(0,0,cv.width,cv.height);
+    for(var r=0;r<rows;r++)for(var c=0;c<cols;c++){
+      var v=cells[r*cols+c];
+      if(v<=.018)continue;
+      cells[r*cols+c]=Math.max(0,v-(.004+Math.random()*.013));
+      if(v>.08){
+        var a=Math.min(.8,.14+v*.6);
+        ctx.globalAlpha=a;
+        if(Math.random()<.05){
+          ctx.fillStyle='#ff2e63';
+          ctx.globalAlpha=a*.5;
+          ctx.fillRect(c*CELL,r*CELL,CELL,CELL);
+        }else{
+          ctx.fillStyle=pat;
+          ctx.fillRect(c*CELL,r*CELL,CELL,CELL);
+        }
+      }
+    }
+    ctx.globalAlpha=1;
+    requestAnimationFrame(tick);
+  }
+  tick();
 })();
 
 // ---- фильтры работ ----
