@@ -118,16 +118,14 @@ header{
 }
 /* фоновая сцена UnicornStudio: живёт только внутри hero, кликов не ловит */
 #usBg{
-  position:absolute;inset:0;z-index:0;overflow:hidden;
-  display:flex;align-items:center;justify-content:center;
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+  opacity:0;transition:opacity 1.2s var(--ease);
   /* пока сцена грузится (или если CDN недоступен) — мягкая подложка в цвет бумаги */
   background:radial-gradient(120% 90% at 60% 30%,#efece6 0%,var(--bg) 70%);
 }
-/* сцена приходит квадратом 1080×1080 — растягиваем её на весь hero */
-#usBg>div{
-  width:100%!important;height:100%!important;min-width:1080px;min-height:1080px;
-}
-#usBg canvas{display:block}
+#usBg.on{opacity:.85}
+#usBg canvas{width:100%!important;height:100%!important;display:block}
+@media(prefers-reduced-motion:reduce){#usBg{transition:none}}
 .hero-kec{
   font-weight:900;font-size:clamp(96px,24vw,380px);line-height:.82;letter-spacing:-.06em;
   position:relative;z-index:2;user-select:none;
@@ -484,10 +482,7 @@ footer{
 </nav>
 
 <header>
-  <div id="usBg" aria-hidden="true">
-    <div style="width: 1080px; height: 1080px" data-us-project="3k33vJztOxynXGWLOzUV"></div>
-    <script type="text/javascript">!function(){var u=window.UnicornStudio;if(u&&u.init){if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",function(){u.init()})}else{u.init()}}else{window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.2.8/dist/unicornStudio.umd.js",i.onload=function(){if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",function(){UnicornStudio.init()})}else{UnicornStudio.init()}},(document.head||document.body).appendChild(i)}}();</script>
-  </div>
+  <div id="usBg" data-us-project="ge3Ju59EBFwvL3UJKKys" data-us-scale="1" data-us-dpi="1.5" data-us-disablemobile="true" aria-hidden="true"></div>
   <h1 class="hero-kec" id="heroTitle" aria-label="KEC"><span class="l">K</span><span class="l">E</span><span class="l">C</span></h1>
   <div class="hero-photo rv">
     <div class="tape t1"></div>
@@ -769,7 +764,48 @@ footer{
   document.querySelectorAll('.work').forEach(function(w){io.observe(w)});
 })();
 
-// сцена UnicornStudio грузится своим штатным сниппетом прямо в hero (см. #usBg)
+// ---- hero: фоновая сцена UnicornStudio ----
+(function(){
+  var host=document.getElementById('usBg');
+  if(!host)return;
+
+  function reveal(){host.classList.add('on')}
+
+  function init(){
+    if(!window.UnicornStudio||!window.UnicornStudio.init)return;
+    // init() возвращает промис со списком сцен — по нему и проявляем фон
+    var r=window.UnicornStudio.init();
+    if(r&&r.then)r.then(reveal,function(){/* сцена не поднялась — остаётся подложка */});
+    else setTimeout(reveal,600);
+  }
+
+  // сцену показываем только там, где она уместна: десктоп + нет reduced-motion
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!matchMedia('(hover:hover)').matches){
+    reveal();
+    return;
+  }
+
+  if(window.UnicornStudio&&window.UnicornStudio.init){init();return}
+  window.UnicornStudio={isInitialized:false};
+  var s=document.createElement('script');
+  s.src='https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.2.8/dist/unicornStudio.umd.js';
+  s.async=true;
+  s.onload=init;
+  s.onerror=reveal;   // CDN недоступен — просто оставляем статичную подложку
+  (document.head||document.body).appendChild(s);
+
+  // hero ушёл из вида — глушим отрисовку, чтобы не жечь GPU при скролле
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        var u=window.UnicornStudio;
+        if(!u)return;
+        if(e.isIntersecting){u.resume&&u.resume()}
+        else{u.pause&&u.pause()}
+      });
+    },{threshold:0}).observe(host);
+  }
+})();
 
 // ---- фильтры работ ----
 (function(){
