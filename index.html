@@ -266,8 +266,10 @@ section{padding:120px 32px;position:relative}
   filter:grayscale(1) contrast(1.05);
   transition:transform .8s var(--ease),filter .6s var(--ease);
 }
-.work:hover img,.work.incolor img{filter:grayscale(0) contrast(1)}
-.work:hover img{transform:scale(1.05)}
+.work:hover img{filter:grayscale(0) contrast(1);transform:scale(1.05)}
+@media(hover:none){
+  .work img{filter:none}
+}
 .work .num{
   position:absolute;top:14px;left:14px;z-index:2;
   font-family:var(--mono);font-size:11px;letter-spacing:.1em;
@@ -755,14 +757,6 @@ function initNavSpy(){
   document.querySelectorAll('section[id]').forEach(function(s){io.observe(s)});
 }
 
-// ---- ч/б → цвет на мобильных (карточка в центре экрана) ----
-function initMobileColor(){
-  if(matchMedia('(hover:hover)').matches)return;
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){e.target.classList.toggle('incolor',e.isIntersecting)});
-  },{rootMargin:'-38% 0px -38% 0px'});
-  document.querySelectorAll('.work').forEach(function(w){io.observe(w)});
-}
 
 // ---- hero: пиксельные полосы под курсором ----
 (function(){
@@ -1069,7 +1063,7 @@ function applyContent(c){
 }
 
 function initAll(){
-  initCursor();initReveal();initNavSpy();initMobileColor();initFilters();initLightbox();
+  initCursor();initReveal();initNavSpy();initFilters();initLightbox();
 }
 
 fetch('content.json?ts='+Date.now())
