@@ -51,10 +51,6 @@
       {
         "key": "case",
         "label": "Кейсы"
-      },
-      {
-        "key": "jasperBLCK",
-        "label": "Крутость"
       }
     ],
     "empty": {
@@ -142,18 +138,6 @@
         "tags": [
           "постер",
           "глитч"
-        ]
-      },
-      {
-        "title": "jasperBLCK на СВО",
-        "year": "2026",
-        "image": "assets/uploads/1787246406930-y5yad.jpg",
-        "alt": "JasperCAT - фотка с СВО",
-        "cats": [
-          "jasperBLCK"
-        ],
-        "tags": [
-          "Фотка"
         ]
       }
     ]
