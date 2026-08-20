@@ -455,6 +455,7 @@ footer{
 @media (prefers-reduced-motion:reduce){
   *{animation:none !important;transition:none !important}
   .rv,.work,.hero-kec .l{opacity:1;transform:none}
+  .marquee .track{animation:mq 22s linear infinite !important}
 }
 </style>
 </head>
@@ -732,7 +733,11 @@ function initCursor(){
 function initMarquee(items){
   items=items&&items.length?items:['digital media','типографика','collage','poster design','эксперимент','KEC','motion'];
   var half=items.map(function(s){return '<span>'+esc(s)+' ✳</span>'}).join('');
-  document.getElementById('mq').innerHTML=half+half+half+half;
+  var track=document.getElementById('mq');
+  track.innerHTML=half+half+half+half;
+  track.style.animation='none';
+  void track.offsetWidth;
+  track.style.animation='';
 }
 
 // ---- scroll reveal ----
