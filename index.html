@@ -1063,6 +1063,7 @@ function applyContent(c){
 }
 
 function initAll(){
+  if(!document.getElementById('mq').children.length)initMarquee();
   initCursor();initReveal();initNavSpy();initFilters();initLightbox();
 }
 
