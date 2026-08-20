@@ -1,0 +1,166 @@
+{
+  "site": {
+    "title": "KEC — Елизавета Козлова / Digital Media Designer",
+    "description": "Портфолио Елизаветы Козловой (KEC) — дизайнера цифровых медиа. Постеры, коллажи, экспериментальная типографика. Заказ работ — @plampun.",
+    "logo": "KEC*"
+  },
+  "nav": {
+    "works": "Работы",
+    "services": "Услуги",
+    "about": "Обо мне",
+    "contact": "Контакт"
+  },
+  "hero": {
+    "title": "KEC",
+    "name": "Елизавета Козлова",
+    "role": "digital media designer",
+    "photo": "assets/works/work-01.jpg",
+    "photoAlt": "Елизавета Козлова — KEC",
+    "meta": "posters / collage / type\nbased in RU\n<b>открыта к заказам</b>",
+    "scroll": "работы",
+    "marquee": [
+      "digital media",
+      "типографика",
+      "collage",
+      "poster design",
+      "эксперимент",
+      "KEC",
+      "motion"
+    ]
+  },
+  "works": {
+    "tag": "01 / selected works",
+    "title": "РАБОТЫ",
+    "filters": [
+      { "key": "all", "label": "Все" },
+      { "key": "poster", "label": "Постеры" },
+      { "key": "collage", "label": "Коллаж" },
+      { "key": "experiment", "label": "Эксперимент" },
+      { "key": "case", "label": "Кейсы" }
+    ],
+    "empty": {
+      "title": "Здесь пока пусто",
+      "text": "кейсы в производстве — первые появятся в этом сезоне",
+      "linkLabel": "стать первым кейсом →",
+      "href": "https://t.me/plampun"
+    },
+    "items": [
+      {
+        "title": "БУДЬ / BUDDISM",
+        "year": "2025",
+        "image": "assets/works/work-02.jpg",
+        "alt": "БУДЬ / BUDDISM — типографический постер",
+        "cats": ["poster"],
+        "tags": ["постер", "тип"]
+      },
+      {
+        "title": "NERD",
+        "year": "2022",
+        "image": "assets/works/work-06.jpg",
+        "alt": "NERD — коллаж",
+        "cats": ["collage"],
+        "tags": ["коллаж", "тип"]
+      },
+      {
+        "title": "The World 2026",
+        "year": "2026",
+        "image": "assets/works/work-04.jpg",
+        "alt": "The World 2026 — экспериментальная типографика",
+        "cats": ["experiment"],
+        "tags": ["эксперимент", "тип"]
+      },
+      {
+        "title": "Freak / Boucles Fluides",
+        "year": "2025",
+        "image": "assets/works/work-07.jpg",
+        "alt": "Freak / Boucles Fluides — постер",
+        "cats": ["poster", "collage"],
+        "tags": ["постер", "коллаж"]
+      },
+      {
+        "title": "Facing The World",
+        "year": "2024",
+        "image": "assets/works/work-05.jpg",
+        "alt": "Facing The World — архивный коллаж",
+        "cats": ["collage"],
+        "tags": ["коллаж", "архив"]
+      },
+      {
+        "title": "Singing a Song",
+        "year": "2024",
+        "image": "assets/works/work-03.jpg",
+        "alt": "Singing a Song — глитч-постер",
+        "cats": ["poster", "experiment"],
+        "tags": ["постер", "глитч"]
+      }
+    ]
+  },
+  "services": {
+    "tag": "02 / services",
+    "title": "УСЛУГИ",
+    "linkLabel": "обсудить",
+    "href": "https://t.me/plampun",
+    "slot": {
+      "text": "Свободный модуль.<br>Соберём формат под вашу задачу.",
+      "linkLabel": "предложить",
+      "href": "https://t.me/plampun"
+    },
+    "items": [
+      {
+        "title": "Постер / афиша",
+        "description": "Концерт, ивент, релиз, спектакль. Макет под печать и цифровые площадки.",
+        "price": "",
+        "tags": ["печать", "digital"]
+      },
+      {
+        "title": "Обложка релиза",
+        "description": "Сингл, EP, альбом. Версии под все стриминговые площадки и соцсети.",
+        "price": "",
+        "tags": ["музыка"]
+      },
+      {
+        "title": "Коллаж-арт",
+        "description": "Ручной цифровой коллаж — для интерьера, подарка или визуального образа бренда.",
+        "price": "",
+        "tags": ["арт"]
+      },
+      {
+        "title": "Айдентика проекта",
+        "description": "Знак, типографика, цвет и набор носителей для небольшого проекта или события.",
+        "price": "",
+        "tags": ["кейс"]
+      },
+      {
+        "title": "Соцсети / медиа",
+        "description": "Обложки, сторис, шаблоны постов — единый стиль для канала или сообщества.",
+        "price": "",
+        "tags": ["digital"]
+      }
+    ]
+  },
+  "about": {
+    "tag": "03 / about",
+    "title": "ОБО МНЕ",
+    "text": "Привет, я <em>Лиза</em> — дизайнер цифровых медиа. Работаю на стыке <em>типографики</em>, коллажа и глитч-эстетики: ломаю сетки, смешиваю языки и нахожу красоту в цифровом шуме. Ценю ручную фактуру в цифре — бумагу, скотч, растр — и точность в деталях.",
+    "facts": [
+      { "label": "Имя", "value": "Елизавета Козлова / KEC" },
+      { "label": "Фокус", "value": "Digital Media Design" },
+      { "label": "Медиа", "value": "Постеры, коллажи, motion" },
+      { "label": "Инструменты", "value": "PS / AI / AE / Figma" },
+      { "label": "Статус", "value": "Открыта к заказам", "accent": true }
+    ]
+  },
+  "contact": {
+    "tag": "04 / contact",
+    "big": "НАПИШИ МНЕ",
+    "href": "https://t.me/plampun",
+    "links": [
+      { "label": "Заказ / связь → @plampun", "url": "https://t.me/plampun", "hot": true },
+      { "label": "TG-канал → @KEC_lisa", "url": "https://t.me/KEC_lisa", "hot": false }
+    ]
+  },
+  "footer": {
+    "left": "© 2026 KEC — Елизавета Козлова",
+    "right": "designed in digital noise"
+  }
+}
