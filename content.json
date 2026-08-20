@@ -32,11 +32,30 @@
     "tag": "01 / selected works",
     "title": "РАБОТЫ",
     "filters": [
-      { "key": "all", "label": "Все" },
-      { "key": "poster", "label": "Постеры" },
-      { "key": "collage", "label": "Коллаж" },
-      { "key": "experiment", "label": "Эксперимент" },
-      { "key": "case", "label": "Кейсы" }
+      {
+        "key": "all",
+        "label": "Все"
+      },
+      {
+        "key": "poster",
+        "label": "Постеры"
+      },
+      {
+        "key": "collage",
+        "label": "Коллаж"
+      },
+      {
+        "key": "experiment",
+        "label": "Эксперимент"
+      },
+      {
+        "key": "case",
+        "label": "Кейсы"
+      },
+      {
+        "key": "jasperBLCK",
+        "label": "Крутость"
+      }
     ],
     "empty": {
       "title": "Здесь пока пусто",
@@ -50,48 +69,92 @@
         "year": "2025",
         "image": "assets/works/work-02.jpg",
         "alt": "БУДЬ / BUDDISM — типографический постер",
-        "cats": ["poster"],
-        "tags": ["постер", "тип"]
+        "cats": [
+          "poster"
+        ],
+        "tags": [
+          "постер",
+          "тип"
+        ]
       },
       {
         "title": "NERD",
         "year": "2022",
         "image": "assets/works/work-06.jpg",
         "alt": "NERD — коллаж",
-        "cats": ["collage"],
-        "tags": ["коллаж", "тип"]
+        "cats": [
+          "collage"
+        ],
+        "tags": [
+          "коллаж",
+          "тип"
+        ]
       },
       {
         "title": "The World 2026",
         "year": "2026",
         "image": "assets/works/work-04.jpg",
         "alt": "The World 2026 — экспериментальная типографика",
-        "cats": ["experiment"],
-        "tags": ["эксперимент", "тип"]
+        "cats": [
+          "experiment"
+        ],
+        "tags": [
+          "эксперимент",
+          "тип"
+        ]
       },
       {
         "title": "Freak / Boucles Fluides",
         "year": "2025",
         "image": "assets/works/work-07.jpg",
         "alt": "Freak / Boucles Fluides — постер",
-        "cats": ["poster", "collage"],
-        "tags": ["постер", "коллаж"]
+        "cats": [
+          "poster",
+          "collage"
+        ],
+        "tags": [
+          "постер",
+          "коллаж"
+        ]
       },
       {
         "title": "Facing The World",
         "year": "2024",
         "image": "assets/works/work-05.jpg",
         "alt": "Facing The World — архивный коллаж",
-        "cats": ["collage"],
-        "tags": ["коллаж", "архив"]
+        "cats": [
+          "collage"
+        ],
+        "tags": [
+          "коллаж",
+          "архив"
+        ]
       },
       {
         "title": "Singing a Song",
         "year": "2024",
         "image": "assets/works/work-03.jpg",
         "alt": "Singing a Song — глитч-постер",
-        "cats": ["poster", "experiment"],
-        "tags": ["постер", "глитч"]
+        "cats": [
+          "poster",
+          "experiment"
+        ],
+        "tags": [
+          "постер",
+          "глитч"
+        ]
+      },
+      {
+        "title": "Новая работа",
+        "year": "2026",
+        "image": "assets/uploads/1787246406930-y5yad.jpg",
+        "alt": "JasperCAT - фотка с СВО",
+        "cats": [
+          "jasperBLCK"
+        ],
+        "tags": [
+          "Фотка"
+        ]
       }
     ]
   },
@@ -110,31 +173,42 @@
         "title": "Постер / афиша",
         "description": "Концерт, ивент, релиз, спектакль. Макет под печать и цифровые площадки.",
         "price": "",
-        "tags": ["печать", "digital"]
+        "tags": [
+          "печать",
+          "digital"
+        ]
       },
       {
         "title": "Обложка релиза",
         "description": "Сингл, EP, альбом. Версии под все стриминговые площадки и соцсети.",
         "price": "",
-        "tags": ["музыка"]
+        "tags": [
+          "музыка"
+        ]
       },
       {
         "title": "Коллаж-арт",
         "description": "Ручной цифровой коллаж — для интерьера, подарка или визуального образа бренда.",
         "price": "",
-        "tags": ["арт"]
+        "tags": [
+          "арт"
+        ]
       },
       {
         "title": "Айдентика проекта",
         "description": "Знак, типографика, цвет и набор носителей для небольшого проекта или события.",
         "price": "",
-        "tags": ["кейс"]
+        "tags": [
+          "кейс"
+        ]
       },
       {
         "title": "Соцсети / медиа",
         "description": "Обложки, сторис, шаблоны постов — единый стиль для канала или сообщества.",
         "price": "",
-        "tags": ["digital"]
+        "tags": [
+          "digital"
+        ]
       }
     ]
   },
@@ -143,11 +217,31 @@
     "title": "ОБО МНЕ",
     "text": "Привет, я <em>Лиза</em> — дизайнер цифровых медиа. Работаю на стыке <em>типографики</em>, коллажа и глитч-эстетики: ломаю сетки, смешиваю языки и нахожу красоту в цифровом шуме. Ценю ручную фактуру в цифре — бумагу, скотч, растр — и точность в деталях.",
     "facts": [
-      { "label": "Имя", "value": "Елизавета Козлова / KEC" },
-      { "label": "Фокус", "value": "Digital Media Design" },
-      { "label": "Медиа", "value": "Постеры, коллажи, motion" },
-      { "label": "Инструменты", "value": "PS / AI / AE / Figma" },
-      { "label": "Статус", "value": "Открыта к заказам", "accent": true }
+      {
+        "label": "Имя",
+        "value": "Елизавета Козлова / KEC",
+        "accent": false
+      },
+      {
+        "label": "Фокус",
+        "value": "Digital Media Design",
+        "accent": false
+      },
+      {
+        "label": "Медиа",
+        "value": "Постеры, коллажи, motion",
+        "accent": false
+      },
+      {
+        "label": "Инструменты",
+        "value": "PS / AI / AE / Figma",
+        "accent": false
+      },
+      {
+        "label": "Статус",
+        "value": "Открыта к заказам",
+        "accent": true
+      }
     ]
   },
   "contact": {
@@ -155,8 +249,16 @@
     "big": "НАПИШИ МНЕ",
     "href": "https://t.me/plampun",
     "links": [
-      { "label": "Заказ / связь → @plampun", "url": "https://t.me/plampun", "hot": true },
-      { "label": "TG-канал → @KEC_lisa", "url": "https://t.me/KEC_lisa", "hot": false }
+      {
+        "label": "Заказ / связь → @plampun",
+        "url": "https://t.me/plampun",
+        "hot": true
+      },
+      {
+        "label": "TG-канал → @KEC_lisa",
+        "url": "https://t.me/KEC_lisa",
+        "hot": false
+      }
     ]
   },
   "footer": {
