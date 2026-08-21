@@ -38,19 +38,19 @@
       },
       {
         "key": "poster",
-        "label": "Постеры"
+        "label": "Постеры и афиши"
       },
       {
-        "key": "collage",
-        "label": "Коллаж"
-      },
-      {
-        "key": "experiment",
-        "label": "Эксперимент"
+        "key": "miscellaneous",
+        "label": "Разное"
       },
       {
         "key": "case",
         "label": "Кейсы"
+      },
+      {
+        "key": "other",
+        "label": "Другое"
       }
     ],
     "empty": {
@@ -62,51 +62,47 @@
     "items": [
       {
         "title": "БУДЬ / BUDDISM",
-        "year": "2025",
+        "year": "2026",
         "image": "assets/works/work-02.jpg",
         "alt": "БУДЬ / BUDDISM — типографический постер",
         "cats": [
-          "poster"
+          "miscellaneous"
         ],
         "tags": [
-          "постер",
-          "тип"
+          "коллаж"
         ]
       },
       {
         "title": "NERD",
-        "year": "2022",
+        "year": "2026",
         "image": "assets/works/work-06.jpg",
         "alt": "NERD — коллаж",
         "cats": [
-          "collage"
+          "miscellaneous"
         ],
         "tags": [
-          "коллаж",
-          "тип"
+          "коллаж"
         ]
       },
       {
-        "title": "The World 2026",
+        "title": "Ищи во вне",
         "year": "2026",
         "image": "assets/works/work-04.jpg",
-        "alt": "The World 2026 — экспериментальная типографика",
+        "alt": "Ищи во вне - типографический постер",
         "cats": [
-          "experiment"
+          "poster"
         ],
         "tags": [
-          "эксперимент",
-          "тип"
+          "постер"
         ]
       },
       {
         "title": "Freak / Boucles Fluides",
-        "year": "2025",
+        "year": "2026",
         "image": "assets/works/work-07.jpg",
-        "alt": "Freak / Boucles Fluides — постер",
+        "alt": "коллажный постер",
         "cats": [
-          "poster",
-          "collage"
+          "miscellaneous"
         ],
         "tags": [
           "постер",
@@ -114,12 +110,12 @@
         ]
       },
       {
-        "title": "Facing The World",
-        "year": "2024",
+        "title": "The World",
+        "year": "2026",
         "image": "assets/works/work-05.jpg",
-        "alt": "Facing The World — архивный коллаж",
+        "alt": "Facing The World - архивный коллаж",
         "cats": [
-          "collage"
+          "miscellaneous"
         ],
         "tags": [
           "коллаж",
@@ -127,18 +123,26 @@
         ]
       },
       {
-        "title": "Singing a Song",
-        "year": "2024",
-        "image": "assets/works/work-03.jpg",
-        "alt": "Singing a Song — глитч-постер",
+        "title": "Акустический вечер",
+        "year": "2026",
+        "image": "assets/uploads/1787318922734-wgrbi.jpg",
+        "alt": "Музыкальная афиша ",
         "cats": [
-          "poster",
-          "experiment"
+          "poster"
         ],
         "tags": [
-          "постер",
-          "глитч"
+          "афиша"
         ]
+      },
+      {
+        "title": "Афиша для ЗА ГЛАЗКИ",
+        "year": "2025",
+        "image": "assets/uploads/1787318929719-v93ih.jpg",
+        "alt": "ЗА ГЛАЗКИ",
+        "cats": [
+          "poster"
+        ],
+        "tags": []
       }
     ]
   },
