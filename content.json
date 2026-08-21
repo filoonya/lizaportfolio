@@ -73,6 +73,19 @@
         ]
       },
       {
+        "title": "Ищи во вне 2",
+        "year": "2026",
+        "image": "assets/uploads/1787328005390-r3rr0.jpg",
+        "alt": "Ищи во вне",
+        "cats": [
+          "poster"
+        ],
+        "tags": [
+          "постер",
+          "афиша"
+        ]
+      },
+      {
         "title": "Афиша Акустический вечер",
         "year": "2026",
         "image": "assets/uploads/1787319035406-dbv2e.jpg",
@@ -83,6 +96,19 @@
         "tags": [
           "постер",
           "афиша"
+        ]
+      },
+      {
+        "title": "Холст 20х20",
+        "year": "2023",
+        "image": "assets/uploads/1787328575283-323x7.jpg",
+        "alt": "холст 20х20, акрил",
+        "cats": [
+          "other"
+        ],
+        "tags": [
+          "картина",
+          "акрил"
         ]
       },
       {
@@ -125,44 +151,6 @@
         ]
       },
       {
-        "title": "The World",
-        "year": "2026",
-        "image": "assets/works/work-05.jpg",
-        "alt": "Facing The World - архивный коллаж",
-        "cats": [
-          "miscellaneous"
-        ],
-        "tags": [
-          "коллаж",
-          "архив"
-        ]
-      },
-      {
-        "title": "БУДЬ / BUDDISM",
-        "year": "2026",
-        "image": "assets/works/work-02.jpg",
-        "alt": "БУДЬ / BUDDISM — типографический постер",
-        "cats": [
-          "miscellaneous"
-        ],
-        "tags": [
-          "коллаж"
-        ]
-      },
-      {
-        "title": "Афиша для ЗА ГЛАЗКИ",
-        "year": "2025",
-        "image": "assets/uploads/1787319031614-77n6n.jpg",
-        "alt": "ЗА ГЛАЗКИ",
-        "cats": [
-          "poster"
-        ],
-        "tags": [
-          "постер",
-          "афиша"
-        ]
-      },
-      {
         "title": "NERD",
         "year": "2026",
         "image": "assets/works/work-06.jpg",
@@ -175,62 +163,10 @@
         ]
       },
       {
-        "title": "Афиша для ABYSS",
-        "year": "2025",
-        "image": "assets/uploads/1787327841659-xjmsn.jpg",
-        "alt": "Афиша для ABYSS",
-        "cats": [
-          "poster"
-        ],
-        "tags": [
-          "постер",
-          "афиша"
-        ]
-      },
-      {
         "title": "МЫСЛЬ",
         "year": "2026",
         "image": "assets/uploads/1787327918075-p0srt.jpg",
         "alt": "МЫСЛЬ",
-        "cats": [
-          "poster"
-        ],
-        "tags": [
-          "постер",
-          "афиша"
-        ]
-      },
-      {
-        "title": "Ищи во вне 2",
-        "year": "2026",
-        "image": "assets/uploads/1787328005390-r3rr0.jpg",
-        "alt": "Ищи во вне",
-        "cats": [
-          "poster"
-        ],
-        "tags": [
-          "постер",
-          "афиша"
-        ]
-      },
-      {
-        "title": "Будь",
-        "year": "2026",
-        "image": "assets/uploads/1787328065072-4rvh7.jpg",
-        "alt": "Будь",
-        "cats": [
-          "poster"
-        ],
-        "tags": [
-          "постер",
-          "афиша"
-        ]
-      },
-      {
-        "title": "Свобода",
-        "year": "2026",
-        "image": "assets/uploads/1787328105244-nc0yv.jpg",
-        "alt": "Свобода",
         "cats": [
           "poster"
         ],
@@ -252,16 +188,67 @@
         ]
       },
       {
-        "title": "Холст 20х20",
-        "year": "2023",
-        "image": "assets/uploads/1787328575283-323x7.jpg",
-        "alt": "холст 20х20, акрил",
+        "title": "Будь",
+        "year": "2026",
+        "image": "assets/uploads/1787328065072-4rvh7.jpg",
+        "alt": "Будь",
         "cats": [
-          "other"
+          "poster"
         ],
         "tags": [
-          "картина",
-          "акрил"
+          "постер",
+          "афиша"
+        ]
+      },
+      {
+        "title": "Афиша для ABYSS",
+        "year": "2025",
+        "image": "assets/uploads/1787327841659-xjmsn.jpg",
+        "alt": "Афиша для ABYSS",
+        "cats": [
+          "poster"
+        ],
+        "tags": [
+          "постер",
+          "афиша"
+        ]
+      },
+      {
+        "title": "БУДЬ / BUDDISM",
+        "year": "2026",
+        "image": "assets/works/work-02.jpg",
+        "alt": "БУДЬ / BUDDISM — типографический постер",
+        "cats": [
+          "miscellaneous"
+        ],
+        "tags": [
+          "коллаж"
+        ]
+      },
+      {
+        "title": "The World",
+        "year": "2026",
+        "image": "assets/works/work-05.jpg",
+        "alt": "Facing The World - архивный коллаж",
+        "cats": [
+          "miscellaneous"
+        ],
+        "tags": [
+          "коллаж",
+          "архив"
+        ]
+      },
+      {
+        "title": "Свобода",
+        "year": "2026",
+        "image": "assets/uploads/1787328105244-nc0yv.jpg",
+        "alt": "Свобода",
+        "cats": [
+          "poster"
+        ],
+        "tags": [
+          "постер",
+          "афиша"
         ]
       },
       {
@@ -327,6 +314,19 @@
         "tags": [
           "наброски",
           "ручка"
+        ]
+      },
+      {
+        "title": "Афиша для ЗА ГЛАЗКИ",
+        "year": "2025",
+        "image": "assets/uploads/1787319031614-77n6n.jpg",
+        "alt": "ЗА ГЛАЗКИ",
+        "cats": [
+          "poster"
+        ],
+        "tags": [
+          "постер",
+          "афиша"
         ]
       }
     ]
