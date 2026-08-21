@@ -61,30 +61,6 @@
     },
     "items": [
       {
-        "title": "БУДЬ / BUDDISM",
-        "year": "2026",
-        "image": "assets/works/work-02.jpg",
-        "alt": "БУДЬ / BUDDISM — типографический постер",
-        "cats": [
-          "miscellaneous"
-        ],
-        "tags": [
-          "коллаж"
-        ]
-      },
-      {
-        "title": "NERD",
-        "year": "2026",
-        "image": "assets/works/work-06.jpg",
-        "alt": "NERD — коллаж",
-        "cats": [
-          "miscellaneous"
-        ],
-        "tags": [
-          "коллаж"
-        ]
-      },
-      {
         "title": "Ищи во вне",
         "year": "2026",
         "image": "assets/works/work-04.jpg",
@@ -95,6 +71,28 @@
         "tags": [
           "постер"
         ]
+      },
+      {
+        "title": "Акустический вечер",
+        "year": "2026",
+        "image": "assets/uploads/1787319035406-dbv2e.jpg",
+        "alt": "Музыкальная афиша ",
+        "cats": [
+          "poster"
+        ],
+        "tags": [
+          "афиша"
+        ]
+      },
+      {
+        "title": "Афиша для ЗА ГЛАЗКИ",
+        "year": "2025",
+        "image": "assets/uploads/1787319031614-77n6n.jpg",
+        "alt": "ЗА ГЛАЗКИ",
+        "cats": [
+          "poster"
+        ],
+        "tags": []
       },
       {
         "title": "Freak / Boucles Fluides",
@@ -123,26 +121,28 @@
         ]
       },
       {
-        "title": "Акустический вечер",
+        "title": "БУДЬ / BUDDISM",
         "year": "2026",
-        "image": "assets/uploads/1787319035406-dbv2e.jpg",
-        "alt": "Музыкальная афиша ",
+        "image": "assets/works/work-02.jpg",
+        "alt": "БУДЬ / BUDDISM — типографический постер",
         "cats": [
-          "poster"
+          "miscellaneous"
         ],
         "tags": [
-          "афиша"
+          "коллаж"
         ]
       },
       {
-        "title": "Афиша для ЗА ГЛАЗКИ",
-        "year": "2025",
-        "image": "assets/uploads/1787319031614-77n6n.jpg",
-        "alt": "ЗА ГЛАЗКИ",
+        "title": "NERD",
+        "year": "2026",
+        "image": "assets/works/work-06.jpg",
+        "alt": "NERD — коллаж",
         "cats": [
-          "poster"
+          "miscellaneous"
         ],
-        "tags": []
+        "tags": [
+          "коллаж"
+        ]
       }
     ]
   },
