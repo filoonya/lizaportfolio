@@ -81,6 +81,20 @@
           "poster"
         ],
         "tags": [
+          "постер",
+          "афиша"
+        ]
+      },
+      {
+        "title": "Страшная вечеринка",
+        "year": "2026",
+        "image": "assets/uploads/1787319301060-giwl0.jpg",
+        "alt": "Страшная вечеринка",
+        "cats": [
+          "poster"
+        ],
+        "tags": [
+          "постер",
           "афиша"
         ]
       },
@@ -92,7 +106,10 @@
         "cats": [
           "poster"
         ],
-        "tags": []
+        "tags": [
+          "постер",
+          "афиша"
+        ]
       },
       {
         "title": "Freak / Boucles Fluides",
