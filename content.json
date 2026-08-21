@@ -99,10 +99,10 @@
         ]
       },
       {
-        "title": "Афиша для ЗА ГЛАЗКИ",
-        "year": "2025",
-        "image": "assets/uploads/1787319031614-77n6n.jpg",
-        "alt": "ЗА ГЛАЗКИ",
+        "title": "Афиша ВЕКТОР",
+        "year": "2026",
+        "image": "assets/uploads/1787320048307-lz8ef.jpg",
+        "alt": "ВЕКТОР",
         "cats": [
           "poster"
         ],
@@ -150,6 +150,19 @@
         ]
       },
       {
+        "title": "Афиша для ЗА ГЛАЗКИ",
+        "year": "2025",
+        "image": "assets/uploads/1787319031614-77n6n.jpg",
+        "alt": "ЗА ГЛАЗКИ",
+        "cats": [
+          "poster"
+        ],
+        "tags": [
+          "постер",
+          "афиша"
+        ]
+      },
+      {
         "title": "NERD",
         "year": "2026",
         "image": "assets/works/work-06.jpg",
@@ -162,10 +175,10 @@
         ]
       },
       {
-        "title": "Афиша ВЕКТОР",
-        "year": "2026",
-        "image": "assets/uploads/1787320048307-lz8ef.jpg",
-        "alt": "ВЕКТОР",
+        "title": "Афиша для ABYSS",
+        "year": "2025",
+        "image": "assets/uploads/1787327841659-xjmsn.jpg",
+        "alt": "Афиша для ABYSS",
         "cats": [
           "poster"
         ],
