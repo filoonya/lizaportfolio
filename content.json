@@ -307,7 +307,20 @@
         "title": "other",
         "year": "2026",
         "image": "assets/uploads/1787328721998-1j16k.jpg",
-        "alt": "other",
+        "alt": "Наброски",
+        "cats": [
+          "other"
+        ],
+        "tags": [
+          "наброски",
+          "ручка"
+        ]
+      },
+      {
+        "title": "Наброски",
+        "year": "2026",
+        "image": "assets/uploads/1787328737603-pwiyy.jpg",
+        "alt": "Наброски",
         "cats": [
           "other"
         ],
